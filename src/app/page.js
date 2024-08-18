@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Image
-        src="/images/assets/home/background-home-desktop.jpg"
+        src="/images/home/background-home-desktop.jpg"
         width={1000}
         height={1000}
         alt="background"
