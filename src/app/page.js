@@ -22,6 +22,7 @@ export default function Home() {
           objectFit: "cover",
           top: "0",
         }}
+        priority
       />
       <Nav />
       <div className=" flex md:flex-row mt-40 ml-32 mr-32 justify-between">

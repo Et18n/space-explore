@@ -72,6 +72,7 @@ export default function Crew() {
           top: "0",
           zIndex: "-10",
         }}
+        priority
       />
       <Nav />
       {crewNum === "commander" ? (
