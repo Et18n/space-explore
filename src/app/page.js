@@ -38,7 +38,7 @@ export default function Home() {
         priority={true}
       />
       <Nav />
-      <div className=" text-center md:text-left flex md:flex-row flex-col mt-12 md:mt-40 md:mx-32 md:justify-between">
+      <div className=" text-center md:text-left flex md:flex-row flex-col mt-5 md:mt-40 md:mx-32 md:justify-between">
         <div className=" font-thin  ">
           <span className=" uppercase text-sm">So, you want to travel to</span>
           <div
@@ -54,7 +54,7 @@ export default function Home() {
           </p>
         </div>
         <Link href={"/destination"}>
-          <div className=" bg-white text-black font-light md:right-1/2 rounded-full w-fit  h-fit md:px-10 md:py-28 md:text-5xl text-2xl md:mr-32 px-12 py-20 mx-[50%] -translate-x-[50%]  mt-24 xl:mt-0">
+          <div className=" bg-white text-black font-light md:right-1/2 rounded-full w-fit  h-fit md:px-10 md:py-28 md:text-5xl text-2xl md:mr-32 px-12 py-20 mx-[50%] -translate-x-[50%]  mt-10 xl:mt-0">
             EXPLORE
           </div>
         </Link>
