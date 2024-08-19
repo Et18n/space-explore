@@ -41,7 +41,6 @@ export default function Technology() {
   function switchTech(id) {
     setTech(id);
   }
-  console.log(techData["0"].description);
   return (
     <div>
       <Image
@@ -56,7 +55,7 @@ export default function Technology() {
           top: "0",
           zIndex: "-10",
         }}
-        priority:true
+        priority={true}
       />
       <Nav />
       {/* Main Technology */}

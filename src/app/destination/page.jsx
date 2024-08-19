@@ -75,7 +75,7 @@ export default function Destination() {
           top: "0",
           zIndex: "-10",
         }}
-        priority:true
+        priority={true}
         alt="background_destination"
       />
       {/* Navbar Component */}

@@ -25,7 +25,7 @@ const TechProps = ({ name, images, description }) => {
               height: "430px",
             }}
             draggable={false}
-            priority:true
+            priority={true}
           />
         </div>
       </div>

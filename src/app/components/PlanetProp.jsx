@@ -19,7 +19,7 @@ const PlanetProp = ({ name, images, desc, distance, travel, planetcharge }) => {
               height={300}
               draggable={false}
               alt="planet image"
-              priority:true
+              priority={true}
             />
           </div>
         </div>
