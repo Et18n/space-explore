@@ -13,11 +13,18 @@ const PlanetProp = ({ name, images, desc, distance, travel, planetcharge }) => {
             DESTINATION
           </div>
           <div>
-            <Image src={images} width={400} height={300} draggable={false} alt="planet image" />
+            <Image
+              src={images}
+              width={400}
+              height={300}
+              draggable={false}
+              alt="planet image"
+              priority:true
+            />
           </div>
         </div>
         <div className=" mt-28 ml-36">
-          <div className={`${myFont.className}   text-8xl`} >{name}</div>
+          <div className={`${myFont.className}   text-8xl`}>{name}</div>
           <p className=" w-[400px]">{desc}</p>
           <hr className=" mt-12 border-b-[1px] border-gray-500 w-[450px]" />
           <div className=" flex flex-row justify-between mt-10   w-fit">

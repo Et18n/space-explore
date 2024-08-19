@@ -32,6 +32,7 @@ const CrewProp = ({ role, name, bio, images }) => {
               height: "500px",
             }}
             draggable={false}
+            priority:true
           />
         </div>
       </div>
