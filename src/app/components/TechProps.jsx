@@ -22,7 +22,7 @@ const TechProps = ({ name, images, description }) => {
             alt="tech"
             style={{
               width: "auto",
-              height: "430px",
+              height: "23em",
             }}
             draggable={false}
             priority={true}

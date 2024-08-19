@@ -65,6 +65,7 @@ export default function Destination() {
     <>
       {/* background image */}
       <Image
+        className="hidden md:block"
         src="/images/destination/background-destination-desktop.jpg"
         width={1000}
         height={1000}
@@ -78,11 +79,26 @@ export default function Destination() {
         priority={true}
         alt="background_destination"
       />
+      <Image
+        className=" md:hidden"
+        src="/images/destination/background-destination-mobile.jpg"
+        width={1000}
+        height={1000}
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "fixed",
+          top: "0",
+          zIndex: "-10",
+        }}
+        priority={true}
+        alt="background_destination"
+      />
       {/* Navbar Component */}
       <Nav />
 
       {/* Prop for the planets */}
-      <div className=" flex ">
+      <div className=" flex flex-col-reverse md:flex-row ">
         {planet === "moon" ? (
           <PlanetProp
             name={planets["0"].name}
@@ -128,7 +144,7 @@ export default function Destination() {
           ""
         )}
         <div className=" mt-20 relative ">
-          <div className="planet_links absolute -top-4  right-[29vw] flex flex-row gap-4 mb-4 list-none">
+          <div className="planet_links absolute -top-20 md:-top-4 left-[50%] -translate-x-[50%]   md:right-[29vw] flex flex-row gap-4  list-none">
             <li>
               <button
                 className={
