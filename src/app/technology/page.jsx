@@ -56,7 +56,7 @@ export default function Technology() {
           top: "0",
           zIndex: "-10",
         }}
-        priority
+        priority:true
       />
       <Nav />
       {/* Main Technology */}
