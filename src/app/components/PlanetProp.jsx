@@ -27,7 +27,7 @@ const PlanetProp = ({ name, images, desc, distance, travel, planetcharge }) => {
           </div>
         </div>
         <div className=" md:mt-28 md:ml-36 text-center   md:text-left">
-          <div className={`${myFont.className}   md:text-8xl text-6xl`}>{name}</div>
+          <div className={`${myFont.className}   md:text-8xl text-6xl mt-5 md:mt-0`}>{name}</div>
           <p className=" md:w-[400px]">{desc}</p>
           <hr className=" mt-12  border-b-[1px] border-gray-500 w-full md:w-[450px] " />
           <div className=" flex flex-row  md:text-left justify-between mt-4 md:mt-10 ml-[1em] md:ml-0   md:w-fit mb-5">

@@ -144,7 +144,7 @@ export default function Destination() {
           ""
         )}
         <div className=" mt-20 relative ">
-          <div className="planet_links absolute -top-20 md:-top-4  md:right-[29vw] -right-[50%] -translate-x-[100%] md:translate-x-0  flex flex-row gap-4  list-none">
+          <div className="planet_links absolute -top-20 md:-top-4  md:right-[29vw] -right-[50%] -translate-x-[100%] md:translate-x-0  flex flex-row gap-4 z-[9]  list-none">
             <li>
               <button
                 className={

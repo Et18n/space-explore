@@ -26,7 +26,7 @@ export default function Nav() {
       >
         <Image
           src="/images/shared/logo.svg"
-          className=" absolute w-10 md:w-12 z-10 md:-left-[40vw] "
+          className=" absolute w-10 md:w-12 z-[11] md:-left-[40vw] "
           width={50}
           height={50}
           alt="logo"
@@ -72,7 +72,7 @@ export default function Nav() {
               position: "absolute",
               right: "2em",
               top: "2em",
-              zIndex: "10",
+              zIndex: "11",
             }}
             alt="burger_king"
           ></Image>
@@ -81,7 +81,7 @@ export default function Nav() {
         <div
           className={
             open === "open"
-              ? "flex  text-center justify-center bg-gray-500  backdrop:opacity-5  -translate-x-[1em] mt-40  py-24 w-[98vw] absolute -top-40 left-0 "
+              ? "flex  text-center justify-center bg-gray-500    -translate-x-[1em] mt-40  py-24 w-[98vw] absolute -top-40 -left-1 z-10 "
               : "hidden w-0"
           }
         >

@@ -4,7 +4,9 @@ import Nav from "../components/Nav";
 import { useState } from "react";
 import localFont from "next/font/local";
 import TechProps from "../components/TechProps";
+import { Roboto } from "next/font/google";
 const myFont = localFont({ src: "./haggard-nova-light.otf" });
+const roboto = Roboto({ subsets: ["latin"], weight: ["100", "300", "500"] });
 
 const techData = [
   {
@@ -44,7 +46,23 @@ export default function Technology() {
   return (
     <div>
       <Image
+        className=" hidden md:block"
         src={"/images/technology/background-technology-desktop.jpg"}
+        width={1000}
+        height={1000}
+        alt="background_tech"
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: "0",
+          zIndex: "-10",
+        }}
+        priority={true}
+      />
+      <Image
+        className=" "
+        src={"/images/technology/background-technology-mobile.jpg"}
         width={1000}
         height={1000}
         alt="background_tech"
@@ -59,13 +77,15 @@ export default function Technology() {
       />
       <Nav />
       {/* Main Technology */}
-      <div className={`${myFont.className} ml-[20vw] text-xl font-medium`}>
+      <div
+        className={`${roboto.className} ml-10 md:ml-[20vw] text-2xl font-medium`}
+      >
         <span className=" mr-4 text-gray-600 font-medium font-sans ">03</span>
         SPACE LAUNCH 101
       </div>
-      <div className={`grid grid-cols-3 mt-20 ${myFont.className}`}>
+      <div className={`grid md:grid-cols-3 mt-20 ${myFont.className}`}>
         <div
-          className={`flex flex-col gap-8 [&>*]:border-white [&>*]:border-[1px] [&>*]:rounded-full [&>*]:px-7 [&>*]:py-5 [&>*]:text-xl [&>*]:text-center w-fit justify-self-end self-start mr-20 ${myFont.className} `}
+          className={`flex md:flex-col gap-8 [&>*]:border-white [&>*]:border-[1px] [&>*]:rounded-full [&>*]:px-7 [&>*]:py-5 [&>*]:text-xl [&>*]:text-center w-fit justify-self-end self-start md:mr-20 ml-10 -mt-10 md:mt-0 mb-10 ${myFont.className} `}
         >
           <button
             className={tech === "launch" ? btnClasses : ""}

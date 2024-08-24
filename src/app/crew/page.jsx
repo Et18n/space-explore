@@ -36,31 +36,21 @@ const crewData = [
   },
 ];
 export default function Crew() {
-  const [crewNum, setCrewNum] = useState("commander");
-  function switchCrew(num) {
-    setCrewNum(num);
-  }
+  const [inx, setinx] = useState(0);
   useEffect(() => {
-    const crewcomms = ["commander", "specialist", "pilot", "engineer"];
+    let i = 0;
 
-    function createCrew(arr) {
-      let index = 0;
-
-      return function () {
-        const element = crewcomms[index];
-        index = (index + 1) % arr.length; // Reset index to 0 when it reaches the end
-        return element;
-      };
-    }
-
-    const getCrew = createCrew(crewcomms);
-    const change = () => setCrewNum(getCrew());
-    window.addEventListener("wheel", change);
-    return () => window.removeEventListener("wheel", change);
+    window.addEventListener("wheel", () => {
+      console.log(i);
+      i = (i + 1) % crewData.length; // Reset index to 0 when it reaches the end
+      setinx(i);
+    });
+    //return () => window.removeEventListener("wheel", change);
   }, []);
   return (
     <>
       <Image
+        className="hidden lg:block"
         src={"/images/crew/background-crew-desktop.jpg"}
         width={1000}
         alt="background_crew"
@@ -74,81 +64,46 @@ export default function Crew() {
         }}
         priority={true}
       />
+      <Image
+        className="lg:hidden"
+        src={"/images/crew/background-crew-mobile.jpg"}
+        width={1000}
+        alt="background_crew"
+        height={1000}
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "fixed",
+          top: "0",
+          zIndex: "-10",
+        }}
+        priority={true}
+      />
       <Nav />
-      {crewNum === "commander" ? (
-        <CrewProp
-          role={crewData["0"].role}
-          name={crewData["0"].name}
-          bio={crewData["0"].bio}
-          images={crewData["0"].images}
-        />
-      ) : (
-        ""
-      )}
-      {crewNum === "specialist" ? (
-        <CrewProp
-          role={crewData["1"].role}
-          name={crewData["1"].name}
-          bio={crewData["1"].bio}
-          images={crewData["1"].images}
-        />
-      ) : (
-        ""
-      )}
-      {crewNum === "pilot" ? (
-        <CrewProp
-          role={crewData["2"].role}
-          name={crewData["2"].name}
-          bio={crewData["2"].bio}
-          images={crewData["2"].images}
-        />
-      ) : (
-        ""
-      )}
-      {crewNum === "engineer" ? (
-        <CrewProp
-          role={crewData["3"].role}
-          name={crewData["3"].name}
-          bio={crewData["3"].bio}
-          images={crewData["3"].images}
-        />
-      ) : (
-        ""
-      )}
 
-      <div className=" mt-16 ml-40 flex flex-row gap-4 fill-gray-800">
-        <button
-          onClick={() => switchCrew("commander")}
-          className={crewNum === "commander" ? "w-4 fill-white " : "w-4 "}
-        >
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="50" />
-          </svg>
-        </button>
-        <button
-          onClick={() => switchCrew("specialist")}
-          className={crewNum === "specialist" ? "w-4 fill-white " : "w-4 "}
-        >
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="50" />
-          </svg>
-        </button>
-        <button
-          onClick={() => switchCrew("pilot")}
-          className={crewNum === "pilot" ? "w-4 fill-white " : "w-4 "}
-        >
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="50" />
-          </svg>
-        </button>
-        <button
-          onClick={() => switchCrew("engineer")}
-          className={crewNum === "engineer" ? "w-4 fill-white " : "w-4 "}
-        >
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="50" />
-          </svg>
-        </button>
+      {
+        <CrewProp
+          role={crewData[inx].role}
+          name={crewData[inx].name}
+          bio={crewData[inx].bio}
+          images={crewData[inx].images}
+        />
+      }
+
+      <div className="  mt-16 ml-10 md:ml-40 flex flex-row gap-4 fill-gray-800">
+        {crewData.map((crew, index) => {
+          return (
+            <button
+              onClick={() => setinx(index)}
+              className={index == inx ? "w-4 fill-white " : "w-4 "}
+              key={index}
+            >
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+            </button>
+          );
+        })}
       </div>
     </>
   );
